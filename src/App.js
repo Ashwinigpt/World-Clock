@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Stopwatch from "./components/Stopwatch";
+import Countdown from "./components/Countdown";
+
+class App extends Component {
+  state = {
+    stopwatch: false,
+    countdown: false
+  };
+  close = (key) => {
+    this.setState({ [key]: false });
+  };
+  render() {
+    return (
+      <div className="App">
+        <div className="App-title">🚀 Timers 🚀</div>
+        <div className="Timers">
+          {this.state.stopwatch ? (
+            <Stopwatch close={this.close} />
+          ) : (
+            <button onClick={() => this.setState({ stopwatch: true })}>
+              Show Stopwatch
+            </button>
+          )}
+          {this.state.countdown ? (
+            <Countdown close={this.close} />
+          ) : (
+            <button onClick={() => this.setState({ countdown: true })}>
+              Show Countdown
+            </button>
+          )}
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
