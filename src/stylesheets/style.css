@@ -1,126 +1,256 @@
-* {
+/* http://meyerweb.com/eric/tools/css/reset/V2.0 | 20110126 License: none (public domain) */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
 }
 
-.App {
-    text-align: center;
-    font-family: "Roboto", sans-serif;
-    background-color: rgb(34, 34, 34);
-    height: 100vh;
-    color: rgb(250, 250, 250);
+/* HTML5 display-role reset for older browsers */
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
 }
 
-.App-title {
-    font-size: 50px;
-    padding: 25px 0;
-    margin-bottom: 2rem;
+body {
+    line-height: 1;
 }
 
-.cross {
-    position: absolute;
-    right: -6px;
-    top: -10px;
-    font-size: 1.25rem;
-    font-weight: bold;
-    cursor: pointer;
+ol,
+ul {
+    list-style: none;
 }
 
-.Timers {
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: "";
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Flex */
+.flex {
     display: flex;
+}
+
+.justify-center {
     justify-content: center;
 }
 
-@media (max-width: 900px) {
-    .Timers {
-        flex-direction: column;
-
-        align-items: center;
-    }
+.align-center {
+    align-items: center;
 }
 
-@media (max-width: 900px) {
-    .Stopwatch {
-        margin-bottom: 40px;
-    }
-}
+/* Global Styles */
 
-.Countdown,
-.Stopwatch {
-    margin-left: 30px;
-    margin-right: 30px;
-    border: 2px solid grey;
-    border-radius: 4px;
-    padding: 20px;
-    width: 400px;
-    background-color: rgb(22, 27, 31);
-    box-shadow: 0 3px 6px rgb(12, 12, 12);
-}
-
-.Countdown,
-.Stopwatch {
-    padding-top: 10px;
-    position: relative;
-}
-
-.Countdown-header,
-.Stopwatch-header {
-    font-size: 40px;
-    font-weight: bold;
-}
-
-button {
-    background-color: #202b33;
-    border: solid 1px transparent;
-    border-radius: 4px;
-    padding: 10px 20px;
-    color: #ffffff;
+html {
     font-size: 16px;
-    margin: 0 5px;
+}
+
+body {
+    font-size: 1.125rem;
+    font-family: "Nunito", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.z-index-1 {
+    z-index: 1;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    border: none;
+    outline: none;
+    background: none;
+    padding: 0.25rem .5rem;
+    border-radius: 0.2rem;
+    box-sizing: border-box;
+    margin-right: .5rem;
+}
+
+.btn-primary {
+    color: purple;
+    border: 1px solid purple;
+}
+
+.btn:hover {
     cursor: pointer;
+    background-color: purple;
+    color: white;
+    border: 1px solid purple;
 }
 
-button:hover {
-    background-color: #106ba3;
+.square {
+    background: #fff;
+    border: 1px solid #999;
+    float: left;
+    font-size: 50px;
+    font-weight: bold;
+    margin-right: -1px;
+    margin-top: -1px;
+    padding: 0;
+    text-align: center;
+    width: 80px;
+    line-height: 80px;
+    height: 80px;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    background-color: rgb(199, 121, 199);
+    margin: 10px;
+    border-radius: .25rem;
 }
 
-.Stopwatch button {
-    padding: 12px 32px;
-    font-size: 20px;
+h1 {
+    font-size: 3.2rem;
+    color: purple;
+    font-weight: 700;
 }
 
-.Stopwatch-display {
-    padding: 40px 0;
-    font-size: 48px;
+.game {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
 }
 
-.Countdown-display {
-    margin-top: 5px;
-    margin-bottom: 20px;
+.game-board {
+    border: 1px solid purple;
+    border-radius: .25rem;
 }
 
-.Countdown-display button {
-    margin: 0 15px;
-    border: solid 1px transparent;
-    border-radius: 2px;
-    padding: 4px 16px;
-    color: #ffffff;
-
-    font-size: 16px;
+.goto {
+    text-align: center;
+    color: purple;
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 1rem auto;
 }
 
-.Countdown-display button:hover {
-    background-color: #106ba3;
+.status {
+    text-align: center;
+    color: purple;
+    font-size: 2rem;
+    font-weight: 700;
 }
 
-.Countdown-label {
-    font-size: 18px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-}
-
-.Countdown-time {
-    font-size: 36px;
-    margin: 5px 0;
+.reach {
+    border: 1px solid purple;
+    border-radius: .4rem;
+    padding-bottom: 1rem;
+    padding-left: .5rem;
+    margin-top: 1rem;
 }
